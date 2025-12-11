@@ -15,6 +15,15 @@
         image: grafana:2.15.0
         name: ecommerce-website
         output_logs: true
+        
+    - name: Create or update a Grafana user
+      community.grafana.grafana_user:
+        url_username: admin
+        url_password: admin
+        login: Admin
+        password: password
+        is_admin: true
+
 
     - name: Show output
       ansible.builtin.debug:
